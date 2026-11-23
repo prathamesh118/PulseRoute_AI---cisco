@@ -1,0 +1,20 @@
+{
+    "case_id": "NET-031",
+    "case_title": "Core Router LAN Gateway Interface Administratively Disabled",
+    "category": "Gateway",
+    "severity": "Critical",
+    "problem": "Workstations across Finance Subnet cannot forward frames to remote enterprise subnets. Local ARP resolves switch, but gateway 192.168.1.1 is silent.",
+    "evidence_status": "VALIDATED_TEST_PAYLOAD",
+    "topology": "1 Catalyst Switch + 2 Workstations + 1 Cisco 2911 ISR",
+    "evidence": {
+        "evidence_section": "Router# show ip interface brief\nGigabitEthernet0/0/0   192.168.1.1     YES manual administratively down down\nGigabitEthernet0/0/1   10.0.0.1        YES manual up                    up\n\nRouter# show interfaces GigabitEthernet0/0/0\nGigabitEthernet0/0/0 is administratively down, line protocol is down",
+        "commands": [
+            "show ip interface brief",
+            "show interfaces GigabitEthernet0/0/0",
+            "ping 192.168.1.1"
+        ],
+        "raw_log": "Router# show ip interface brief\nGigabitEthernet0/0/0   192.168.1.1     YES manual administratively down down"
+    },
+    "actual_evidence": "Router# show ip interface brief\nGigabitEthernet0/0/0   192.168.1.1     YES manual administratively down down",
+    "timestamp": "2026-11-23 12:15:00"
+}

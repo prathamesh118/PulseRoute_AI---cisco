@@ -1,0 +1,29 @@
+Router# show access-lists 10
+Standard IP access list 10
+    10 deny   192.168.1.0, wildcard bits 0.0.0.255 (154 matches)
+    20 permit any (342 matches)
+
+Router# show ip interface GigabitEthernet0/0/0
+GigabitEthernet0/0/0 is up, line protocol is up
+  Internet address is 192.168.1.1/24
+  Broadcast address is 255.255.255.255
+  Address determined by setup command
+  MTU is 1500 bytes
+  Helper address is not set
+  Directed broadcast forwarding is disabled
+  Multicast reserved groups joined: 224.0.0.5 224.0.0.6
+  Outgoing access list is not set
+  Inbound  access list is 10
+  Proxy ARP is enabled
+  Local Proxy ARP is disabled
+  Security level is default
+
+PC0> ping 10.10.10.50
+Pinging 10.10.10.50 with 32 bytes of data:
+Reply from 192.168.1.1: Destination host unreachable.
+Reply from 192.168.1.1: Destination host unreachable.
+Reply from 192.168.1.1: Destination host unreachable.
+Reply from 192.168.1.1: Destination host unreachable.
+
+Ping statistics for 10.10.10.50:
+    Packets: Sent = 4, Received = 0, Lost = 4 (100% loss)

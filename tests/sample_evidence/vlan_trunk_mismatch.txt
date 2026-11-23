@@ -1,0 +1,44 @@
+Switch# show interfaces trunk
+
+Port        Mode             Encapsulation  Status        Native vlan
+Fa0/24      on               802.1q         trunking      1
+
+Port        Vlans allowed on trunk
+Fa0/24      1-4094
+
+Port        Vlans allowed and active in management domain
+Fa0/24      1,10,20
+
+Port        Vlans in spanning tree forwarding state and not pruned
+Fa0/24      1,10,20
+
+Switch# show vlan brief
+
+VLAN Name                             Status    Ports
+---- -------------------------------- --------- -------------------------------
+1    default                          active    Fa0/3, Fa0/4, Fa0/5
+10   SALES_VLAN                       active    Fa0/1
+20   MARKETING_VLAN                   active    Fa0/2
+99   MANAGEMENT                       active    
+
+Switch# show interface FastEthernet0/1 switchport
+Name: Fa0/1
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 10 (SALES_VLAN)
+
+Switch# show interface FastEthernet0/2 switchport
+Name: Fa0/2
+Switchport: Enabled
+Administrative Mode: static access
+Operational Mode: static access
+Administrative Trunking Encapsulation: dot1q
+Operational Trunking Encapsulation: native
+Negotiation of Trunking: Off
+Access Mode VLAN: 20 (MARKETING_VLAN)
+% LINK-3-UPDOWN: Interface FastEthernet0/2, changed state to up
+% LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet0/2, changed state to up

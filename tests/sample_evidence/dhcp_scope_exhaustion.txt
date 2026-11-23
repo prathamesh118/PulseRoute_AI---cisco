@@ -1,0 +1,20 @@
+Router# show ip dhcp pool
+% No DHCP pools configured in running configuration.
+
+Router# show ip dhcp binding
+Bindings from all pools: 0 total
+Client-ID/Hardware-Address   IP address     Type       Lease expiration
+
+Router# show ip dhcp conflict
+IP address     Detection method   Detection time
+
+PC0> ipconfig /all
+FastEthernet0 Connection:
+   Connection-specific DNS Suffix..: 
+   Physical Address................: 0060.2F3B.9A11
+   Link-local IPv6 Address.........: FE80::260:2FFF:FE3B:9A11
+   Autoconfiguration IPv4 Address..: 169.254.120.45
+   Subnet Mask.....................: 255.255.0.0
+   Default Gateway.................: 0.0.0.0
+   DHCP Servers....................: 0.0.0.0
+   DHCP Enabled....................: Yes
